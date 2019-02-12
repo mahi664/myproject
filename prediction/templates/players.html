@@ -1,0 +1,253 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" type="jpeg/icon" href="/static/images/premierleague.png">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Premier League Result Prediction</title>
+
+    <script>
+    window.onscroll = () =>{
+      const nav = document.getElementById('nav1');
+      if(this.scrollY <= 120) nav.className = 'navbar navbar-expand-lg navbar-dark ';
+      else nav.className = 'navbar navbar-expand-lg navbar-dark fixed-top';
+      }
+
+     function myfunc(tab){
+        if(tab == "appearances")
+        {
+            document.getElementById('appearances').style.display='block';
+            document.getElementById('assists').style.display='none';
+            document.getElementById('csheets').style.display='none';
+            document.getElementById('goals').style.display='none';
+        }
+        if(tab == "goals")
+        {
+            document.getElementById('appearances').style.display='none';
+            document.getElementById('assists').style.display='none';
+            document.getElementById('csheets').style.display='none';
+            document.getElementById('goals').style.display='block';
+        }
+        else if(tab == 'assists')
+        {
+            document.getElementById('appearances').style.display='none';
+            document.getElementById('goals').style.display='none';
+            document.getElementById('csheets').style.display='none';
+            document.getElementById('assists').style.display='block';
+        }
+        else if(tab == "csheets")
+        {
+        	document.getElementById('appearances').style.display='none';
+            document.getElementById('goals').style.display='none';
+            document.getElementById('assists').style.display='none';
+            document.getElementById('csheets').style.display='block';
+        }
+
+     }
+
+  </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="nav1" style="background-color: rgba(63,16,82,1);">
+		  <a class="navbar-brand" href="http://127.0.0.1:8000/prediction/"><img src="/static/images/premierleague.png"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="http://127.0.0.1:8000/prediction/">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="http://127.0.0.1:8000/prediction/matches">Matches</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Premirer League Statistics</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Team Statistics
+		        </a>
+		       <div class="dropdown-menu" style="width: 530px; " aria-labelledby="navbarDropdown">
+					<div class="row">
+						<div class="col-lg-6">
+					  <a class="dropdown-item" href="#">
+						  <img src="/static/images/aesenal.png" style="border-radius:50%" width="20px" height="20px">Arsenal
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/bournemouth.png" style="border-radius:50%" width="20px" height="20px">Bournemouth
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/brighton.jpg" style="border-radius:50%" width="20px" height="20px">Brighton & Hove Albion
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/burnley.jpg" style="border-radius:50%" width="20px" height="20px">Burnley
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/cardiffcityfc.png" style="border-radius:50%" width="20px" height="20px">Cardiff City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/chelsa.png" style="border-radius:50%" width="20px" height="20px">Chelsa
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/crystalpalace.png" style="border-radius:50%" width="20px" height="20px">Crystal Palace
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/everton.png" style="border-radius:50%" width="20px" height="20px">Everton
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/fulham.png" style="border-radius:50%" width="20px" height="20px">Fulham
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/huddersfield.jpg" style="border-radius:50%" width="20px" height="20px">Huddersfield Town
+					  </a>
+							</div>
+						<div class="col-lg-6">
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/leicestercity.png" style="border-radius:50%" width="20px" height="20px">Leicester City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/liverpool.png" style="border-radius:50%" width="20px" height="20px">Liverpool
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/manchestercity.png" style="border-radius:50%" width="20px" height="20px">Manchester City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/manchesterunited.png" style="border-radius:50%" width="20px" height="20px">Manchester United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/newcastle.png" style="border-radius:50%" width="20px" height="20px">Newcastle United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/southampton.png" style="border-radius:50%" width="20px" height="20px">Southampton
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/tottenham.png" style="border-radius:50%" width="20px" height="20px">Tottenham Hotspur
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/watford	.png" style="border-radius:50%" width="20px" height="20px">Watford
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/westhamunited.png" style="border-radius:50%" width="20px" height="20px">West Ham United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/wolverhampton.png" style="border-radius:50%" width="20px" height="20px">Wolverhampton Wanderers
+					  </a>
+							</div>
+					</div>
+				</div>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Players</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Prediction Model</a>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0" action="http://127.0.0.1:8000/prediction/matches/" method="POST">
+				{% csrf_token %}
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="team">
+		      <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>
+		    </form>
+		  </div>
+	</nav>
+
+	<div class="container-fluid">
+	  <div class="row">
+        <div class="col-lg-2" style="background-color:rgba(63,16,82,1); ">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" onclick="myfunc('appearances')" style="color:white; cursor:pointer;">Appearances Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="myfunc('goals')" style="color:white; cursor:pointer;">Goals Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="myfunc('assists')" style="color:white; cursor:pointer;">Assists Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="myfunc('csheets')" style="color:white; cursor:pointer;">Clean Sheets Stats</a>
+              </li>
+            </ul>
+        </div>
+        <div id="appearances" class="col-lg-10" style="margin-top:20px;">
+            <p>Appearances</p>
+			<div class="row">
+                {% for a in app %}
+                <div class="col-lg-2" style="padding-bottom:20px">
+                    <div class="card" style="width: 10rem;">
+                        <img class="card-img-top" src="/static/images/{{a.name}}.png" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title">{{a.name}}:<br> {{a.appearance}}    </p>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="goals" class="col-lg-10" style="margin-top:20px; display:none">
+			<p>Goals</p>
+            <div class="row">
+                {% for a in goal %}
+                <div class="col-lg-2" style="padding-bottom:20px">
+                    <div class="card" style="width: 10rem;">
+                        <img class="card-img-top" src="/static/images/{{a.name}}.png" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title">{{a.name}}:<br> {{a.goals}}    </p>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="assists" class="col-lg-10" style="margin-top:20px; display:none">
+			<p>Assists</p>
+            <div class="row">
+                {% for a in assist %}
+                <div class="col-lg-2" style="padding-bottom:20px">
+                    <div class="card" style="width: 10rem;">
+                        <img class="card-img-top" src="/static/images/{{a.name}}.png" alt="Card image cap">
+                        <div class="card-body" style="font-size: 13px">
+                            <p class="card-title">{{a.name}}:<br> {{a.assist}}    </p>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+		<div id="csheets" class="col-lg-10" style="margin-top:20px; display:none">
+			<p>Clean Sheets</p>
+            <div class="row">
+                {% for a in cs %}
+                <div class="col-lg-2" style="padding-bottom:20px">
+                    <div class="card" style="width: 10rem;">
+                        <img class="card-img-top" src="/static/images/{{a.name}}.png" alt="Card image cap">
+                        <div class="card-body" style="font-size: 13px">
+                            <p class="card-title">{{a.name}}:<br> {{a.cs}}    </p>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+      </div>
+	</div>
+  </body>
+</html>

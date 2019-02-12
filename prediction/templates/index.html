@@ -1,0 +1,232 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="icon" type="jpeg/icon" href="/static/images/premierleague.png">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Premier League Result Prediction</title>
+
+    <script>
+    window.onscroll = () =>{
+      const nav = document.getElementById('nav1');
+      if(this.scrollY <= 120) nav.className = 'navbar navbar-expand-lg navbar-dark ';
+      else nav.className = 'navbar navbar-expand-lg navbar-dark fixed-top';
+      }
+
+  </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="nav1" style="background-color: rgba(63,16,82,1);">
+		  <a class="navbar-brand" href="#"><img src="/static/images/premierleague.png"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="matches">Matches</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Premirer League Statistics</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Team Statistics
+		        </a>
+		        <div class="dropdown-menu" style="width: 530px; " aria-labelledby="navbarDropdown">
+					<div class="row">
+						<div class="col-lg-6">
+					  <a class="dropdown-item" href="#">
+						  <img src="/static/images/aesenal.png" style="border-radius:50%" width="20px" height="20px">Arsenal
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/bournemouth.png" style="border-radius:50%" width="20px" height="20px">Bournemouth
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/brighton.jpg" style="border-radius:50%" width="20px" height="20px">Brighton & Hove Albion
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/burnley.jpg" style="border-radius:50%" width="20px" height="20px">Burnley
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/cardiffcityfc.png" style="border-radius:50%" width="20px" height="20px">Cardiff City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/chelsa.png" style="border-radius:50%" width="20px" height="20px">Chelsa
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/crystalpalace.png" style="border-radius:50%" width="20px" height="20px">Crystal Palace
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/everton.png" style="border-radius:50%" width="20px" height="20px">Everton
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/fulham.png" style="border-radius:50%" width="20px" height="20px">Fulham
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						   <img src="/static/images/huddersfield.jpg" style="border-radius:50%" width="20px" height="20px">Huddersfield Town
+					  </a>
+							</div>
+						<div class="col-lg-6">
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/leicestercity.png" style="border-radius:50%" width="20px" height="20px">Leicester City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/liverpool.png" style="border-radius:50%" width="20px" height="20px">Liverpool
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/manchestercity.png" style="border-radius:50%" width="20px" height="20px">Manchester City
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/manchesterunited.png" style="border-radius:50%" width="20px" height="20px">Manchester United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/newcastle.png" style="border-radius:50%" width="20px" height="20px">Newcastle United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/southampton.png" style="border-radius:50%" width="20px" height="20px">Southampton
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/tottenham.png" style="border-radius:50%" width="20px" height="20px">Tottenham Hotspur
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/watford	.png" style="border-radius:50%" width="20px" height="20px">Watford
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/westhamunited.png" style="border-radius:50%" width="20px" height="20px">West Ham United
+					  </a>
+					  <a class="dropdown-item"  href="#">
+						  <img src="/static/images/wolverhampton.png" style="border-radius:50%" width="20px" height="20px">Wolverhampton Wanderers
+					  </a>
+							</div>
+					</div>
+				</div>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="players/">Players</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="prediction">Prediction Model</a>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+		  </div>
+	</nav>
+
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" style="height:566px;">
+			<div class="carousel-item active">
+			    <img class="d-block w-100" src="/static/images/image1.jpg" alt="First slide">
+			</div>
+			<div class="carousel-item">
+			    <img class="d-block w-100" src="/static/images/image2.jpg" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+			    <img class="d-block w-100" src="/static/images/image3.jpg" alt="Third slide">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<div class="logoslider" style=" padding: 140px; background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.7)),url(/static/images/p1.jpg); background-attachment: fixed; background-position: center;">
+		<marquee width="100%" height="150px;">
+			<img src="{% static "images/manchestercity.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/manchesterunited.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/tottenham.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/liverpool.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/chelsa.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/aesenal.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/burnley.jpg"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/everton.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/leicestercity.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/newcastle.png"%}" style="margin: 10px;" width="100px" height="100px;">
+		</marquee>
+
+		<marquee width="100%" height="100px;" direction="right">
+			<img src="{% static "images/westbrom.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/stokecity.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/swanseacity.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/southampton.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/huddersfield.jpg"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/brighton.jpg"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/watford.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/westhamunited.png"%}" style="margin: 10px;" width="100px" height="100px;">
+			<img src="{% static "images/bournemouth.png"%}" style="margin: 10px;" width="100px" height="100px;"><img src="{% static "images/crystalpalace.png"%}" style="margin: 10px;" width="100px" height="100px;">
+		</marquee>
+	</div>
+
+	<div class="container-fluid" style="padding:30px 90px; text-align:justify; background-image:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url(/static/images/about.jpg); color:white; background-repeat:no-repeat; background-size:cover; background-attachment:fixed">
+		<center><h4>About Premier League</h4></center>
+		<p>
+			The Premier League (often referred to as the English Premier League (EPL) outside England) is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL).<br><br>
+			The Premier League is a corporation in which the member clubs act as shareholders. Seasons run from August to May with each team playing 38 matches (playing all 19 other teams both home and away).[1] Most games are played on Saturday and Sunday afternoons.
+			The Premier League has featured 47 English and two Welsh clubs since its inception, making it a cross-border league.<br><br>
+			The competition was formed as the FA Premier League on 20 February 1992 following the decision of clubs in the Football League First Division to break away from the Football League, founded in 1888, and take advantage of a lucrative television rights deal.[2] The deal was worth £1 billion a year domestically as of 2013–14, with BSkyB and BT Group securing the domestic rights to broadcast 116 and 38 games respectively.[3] The league generates €2.2 billion per year in domestic and international television rights.[4] In 2014–15, teams were apportioned revenues of £1.6 billion,[5] rising sharply to £2.4 billion in 2016–17.<br><br>
+			The Premier League is the most-watched sports league in the world, broadcast in 212 territories to 643 million homes and a potential TV audience of 4.7 billion people.[7][8] In the 2014–15 season, the average Premier League match attendance exceeded 36,000,[9] second highest of any professional football league behind the Bundesliga's 43,500.[10] Most stadium occupancies are near capacity.[11] The Premier League ranks second in the UEFA coefficients of leagues based on performances in European competitions over the past five seasons, as of 2018.<br><br>
+
+		</p>
+	</div>
+
+	<div class="card" style="padding: 100px; background-color: rgba(242,242,242,1);">
+		<div class="card-header">
+			<center><b>Statistics</b></center>
+		</div>
+		<div class="card-body" style="height: 400px; overflow-y: scroll;">
+			<table class="table" style="background-color: white;">
+			<thead>
+			    <tr>
+					<th scope="col">#</th>
+			      <th scope="col">Club</th>
+			      <th scope="col">MP</th>
+			      <th scope="col">W</th>
+			      <th scope="col">D</th>
+			      <th scope="col">L</th>
+			      <th scope="col">GD</th>
+			      <th scope="col">Pts</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  {% if ptstable %}
+			  	{% for p in ptstable %}
+			    <tr>
+					<td scope="row">{{p.pk}}</td>
+			      <td scope="row"><img src="/static/images/{{p.club}}.png"%}" width="30px" height="30px;"> {{p.club}}</td>
+			      <td>{{p.matchplayed}}</td>
+			      <td>{{p.matcheswon}}</td>
+			      <td>{{p.draws}}</td>
+			      <td>{{p.matcheslost}}</td>
+			      <td>{{p.goaldiff}}</td>
+			      <td>{{p.points}}</td>
+			    </tr>
+				{% endfor %}
+			  {% endif %}
+
+			  </tbody>
+		</table>
+		</div>
+	</div>
+
+  </body>
+</html>
